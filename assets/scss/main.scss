@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    user-select: none;
+}
+
+body{
+    font-family: "Hedvig Letters Sans", sans-serif;
+    background: rgb(0, 36, 36);
+}
+
+.container{
+    max-width: 1430px;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
