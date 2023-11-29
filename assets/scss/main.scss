@@ -119,6 +119,34 @@ body{
     }
 }
 
+.item{
+    background: $black;
+    padding: 10px;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 5px;
+
+    &__img{
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__author{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-icon{
+            object-fit: cover;
+            width: 50px;
+        }
+
+        &-name{
+            color: $white;
+        }
+    }
+}
+
 // Adaptive
 @media screen and (max-width:600px){
     .header{
