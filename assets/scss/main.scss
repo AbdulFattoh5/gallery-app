@@ -29,11 +29,17 @@ body{
 .header{
     background: $black;
     padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
     &__wrap{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     &__logo{
@@ -76,6 +82,48 @@ body{
 
         &:hover{
             transform: scale(1.2);
+        }
+    }
+
+    &__input{
+        display: flex;
+        position: relative;
+        max-width: 280px;
+        width: 100%;
+        &-text{
+            background: $white;
+            border: none;
+            outline: none;
+            padding: 6px 25px 6px 18px;
+            color: $darkGreen;
+            width: 100%;
+            border-radius: 10px;
+
+            &::placeholder{
+                color: $darkGreen;
+            }
+        }
+
+        &-btn{
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 3px;
+
+            & img{
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+}
+
+// Adaptive
+@media screen and (max-width:600px){
+    .header{
+        &__wrap{
+            justify-content: center;
         }
     }
 }
