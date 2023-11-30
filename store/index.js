@@ -10,13 +10,16 @@ export const state = () => ({
 // Mutations
 export const mutations = {
     setPhotos(state, photos) {
-        state.photos = photos
+        state.photos = state.photos.concat(photos);
+    },
+    incrementPages(state) {
+        state.pages++;
     },
 }
 
 // Actions
 export const actions = {
-    async fetchPhotos({ commit, state} ) {
+    async fetchPhotos({ commit, state }) {
         await this.$axios.get(`https://api.pexels.com/v1/curated?per_page=30&page=${state.pages}`,
             {
                 method: "GET",
@@ -33,6 +36,19 @@ export const actions = {
                 console.log(response);
             })
     },
+    async loadMorePhotos({ dispatch, commit, state }) {
+        try {
+            if (!state.search) {
+                commit('incrementPages'); // Mutation to increment pages
+                await dispatch('fetchPhotos');
+            } else {
+                if (state.val === "") return;
+                commit('incrementPages'); // Mutation to increment pages
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
 // Getters
