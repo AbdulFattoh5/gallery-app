@@ -171,8 +171,6 @@ body{
     &__link{
         width: 30px;
         height: 30px;
-        -webkit-filter: invert(1);
-        filter: invert(1);
         transition: 0.3s;
 
         &:hover{
