@@ -15,6 +15,7 @@
             class="header__input-text"
             placeholder="Search images"
             v-model="searchQuery"
+            @keydown.enter="searchImages"
           />
           <button class="header__input-btn" @click="searchImages">
             <img src="@/assets/img/search-icon.png" alt="" />
