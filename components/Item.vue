@@ -2,7 +2,7 @@
   <div class="item">
     <img :src="photo?.src?.large" alt="" class="item__img" />
     <div class="item__details">
-      <a :href="photo?.url" target="_blank"
+      <a download :href="photo?.src?.large" target="_blank"
         ><img src="@/assets/img/enter-icon.png" alt="" class="item__link"
       /></a>
       <div class="item__author">
