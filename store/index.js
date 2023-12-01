@@ -37,7 +37,7 @@ export const mutations = {
 // Actions
 export const actions = {
     async fetchPhotos({ commit, state }) {
-        await this.$axios.get(`https://api.pexels.com/v1/curated?per_page=30&page=${state.pages}`,
+        await this.$axios.get(`https://api.pexels.com/v1/curated?per_page=50&page=${state.pages}`,
             {
                 method: "GET",
                 headers: {
@@ -68,7 +68,7 @@ export const actions = {
     },
     async searchPhotos({ commit, state }) {
         try {
-            const res = await this.$axios.get(`https://api.pexels.com/v1/search?query=${state.val}&per_page=30&page=${state.pages}`,
+            const res = await this.$axios.get(`https://api.pexels.com/v1/search?query=${state.val}&per_page=50&page=${state.pages}`,
                 {
                     method: "GET",
                     headers: {

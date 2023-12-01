@@ -16,6 +16,12 @@ $darkGreen:rgb(0, 36, 36);
 body{
     font-family: "Hedvig Letters Sans", sans-serif;
     background: $darkGreen;
+
+    &::-webkit-scrollbar {
+        display: none;
+        height: 0;
+        width: 0;
+    }
 }
 
 .container{
